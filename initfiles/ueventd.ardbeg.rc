@@ -75,3 +75,5 @@
 /dev/gps	0664	system	system
 /sys/power/sysedp/consumers/icemdm state 0660 radio system
 /dev/input/event*   0777    system  input
+# for hid raw
+/dev/hidraw*	0660	root	system

@@ -35,6 +35,13 @@ on boot
     setprop nvwfd.maxresolution_macroblocks 3600
     #disable 1080p miracast connection for hdvideoplayback
     setprop nvwfd.hdvideoplayback 0
+    # Start GPS daemon
+    service gps-daemon /system/bin/glgps_nvidiaTegra2android -c /system/etc/gps/gpsconfig.xml
+    user gps
+    socket gps seqpacket 0660 gps system
+    group system inet sdcard_rw sdcard_r
+    class main
+    disabled
 
 # mtk gps mnld
     service mnld /system/xbin/mnld

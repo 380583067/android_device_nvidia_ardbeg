@@ -19,6 +19,11 @@ TARGET_CPU_VARIANT := cortex-a15
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+# Board
+TARGET_BOARD_PLATFORM := tegra
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
@@ -110,22 +115,30 @@ BOARD_NO_SECURE_DISCARD := true
 # RenderScript
 OVERRIDE_RS_DRIVER := libnvRSDriver.so
 
+# SELinux
+SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_SEPOLICY_DIRS += device/nvidia/ardbeg/sepolicy
+
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WLAN_DEVICE                := bcmdhd
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/bcm4350/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/bcm4350/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/system/vendor/firmware/bcm4350/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
-WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+# compile wpa_supplicant with WEXT and NL80211 support both
+CONFIG_DRIVER_WEXT          := y
+WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE           := bcmdhd
+BOARD_WLAN_DEVICE_REV       := bcm4330_b2
+BOARD_HOSTAPD_DRIVER        := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_FW_PATH_STA     := "/system/vendor/firmware/bcm43241/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP      := "/system/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P     := "/system/vendor/firmware/bcm43241/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_MODULE_ARG      := "iface_name=wlan0"
+WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
+
 
 # Zygote whitelist extra paths
-ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",\"/dev/mem\",
+ZYGOTE_WHITELIST_PATH_EXTRA := "/dev/nvhost-ctrl","/dev/mem"
 
 # Build with TWRP support
 WITH_TWRP := true

@@ -299,8 +299,6 @@ on property:ro.debuggable=1
     chmod 0666 /sys/class/invensense/mpu/dbg_reg
     chmod 0666 /sys/class/invensense/mpu/dbg_dat
 
-
-   	
 on property:ro.debuggable=1
     # EMC debug interface
     chmod 666 /sys/kernel/debug/tegra_emc/eack_state
