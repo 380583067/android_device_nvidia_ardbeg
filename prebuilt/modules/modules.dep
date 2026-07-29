@@ -1,0 +1,7 @@
+/vendor/lib/modules/raw_ip_net.ko:
+/vendor/lib/modules/baseband_usb_chr.ko:
+/vendor/lib/modules/sd8897.ko: /vendor/lib/modules/sd8897mlan.ko
+/vendor/lib/modules/tcrypt.ko:
+/vendor/lib/modules/sd8897mlan.ko:
+/vendor/lib/modules/mbt8897.ko:
+/vendor/lib/modules/gspca_main.ko:

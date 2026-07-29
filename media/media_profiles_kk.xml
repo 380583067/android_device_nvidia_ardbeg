@@ -24,7 +24,7 @@
                          ExportVideoProfile+)>
   <!ELEMENT CamcorderProfiles (EncoderProfile+, ImageEncoding+, ImageDecoding, Camera)>
   <!ELEMENT EncoderProfile (Video, Audio)>
-  <!ATTLIST EncoderProfile quality (timelapse1080p|timelapse720p|timelapse480p|timelapsehigh|timelapselow|480p|qcif|high|low|1080p) #REQUIRED>
+  <!ATTLIST EncoderProfile quality (timelapse4K|timelapse1080p|timelapse720p|timelapse480p|timelapsehigh|timelapselow|480p|qcif|high|low|1080p|4k) #REQUIRED>
   <!ATTLIST EncoderProfile fileFormat (mp4|3gp) #REQUIRED>
   <!ATTLIST EncoderProfile duration (30|60) #REQUIRED>
   <!ELEMENT Video EMPTY>
@@ -198,6 +198,20 @@
              channels="1" />
     </EncoderProfile>
 
+    <EncoderProfile quality="4K" fileFormat="3gp" duration="30">
+        <Video codec="h264"
+            bitRate="20000000"
+            width="3840"
+            height="2160"
+            frameRate="30"
+            profile="8"
+            numBFrames="0" />
+        <Audio codec="aac"
+            bitRate="96000"
+            sampleRate="16000"
+            channels="1" />
+    </EncoderProfile>
+
     <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="384000"
@@ -317,6 +331,25 @@
              bitRate="14000000"
              width="1920"
              height="1080"
+             frameRate="30"
+             profile="8"
+             numBFrames="0" />
+
+      <!--
+            The Audio part of the profile will not be used since time lapse mode
+            does not capture audio
+      -->
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="16000"
+             channels="1" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="timelapse4K" fileFormat="3gp" duration="30">
+      <Video codec="h264"
+             bitRate="20000000"
+             width="3840"
+             height="2160"
              frameRate="30"
              profile="8"
              numBFrames="0" />
@@ -824,8 +857,8 @@
     -->
   <VideoEncoderCap name="h264" enabled="true"
       minBitRate="64000" maxBitRate="20000000"
-      minFrameWidth="176" maxFrameWidth="1920"
-      minFrameHeight="144" maxFrameHeight="1080"
+      minFrameWidth="176" maxFrameWidth="3840"
+      minFrameHeight="144" maxFrameHeight="2160"
       minFrameRate="30" maxFrameRate="120" />
 
   <VideoEncoderCap name="h263" enabled="true"
@@ -855,8 +888,8 @@
       minSampleRate="8000" maxSampleRate="8000"
       minChannels="1" maxChannels="1" />
 
-  <VideoDecoderCap name="wmv" enabled="false"/>
-  <AudioDecoderCap name="wma" enabled="false"/>
+  <VideoDecoderCap name="wmv" enabled="true"/>
+  <AudioDecoderCap name="wma" enabled="true"/>
   <VideoEditorCap maxInputFrameWidth="1920"
     maxInputFrameHeight="1080"
     maxOutputFrameWidth="1920"

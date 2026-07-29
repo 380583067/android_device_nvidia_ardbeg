@@ -1,0 +1,6 @@
+# Aliases extracted from modules themselves.
+alias usb:v1519p0020d*dc*dsc*dp*ic*isc*ip*in* raw_ip_net
+alias usb:v8087p0716d*dc*dsc*dp*ic*isc*ip*in* baseband_usb_chr
+alias usb:v058Bp0041d*dc*dsc*dp*ic*isc*ip*in* baseband_usb_chr
+alias sdio:c*v02DFd912D* sd8897
+alias sdio:c*v02DFd912E* mbt8897
