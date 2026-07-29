@@ -33,6 +33,22 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.ray_touch.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.ray_touch.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.comms.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.comms.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.hdcp.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
@@ -41,18 +57,26 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE       := init.t124.rc
+LOCAL_MODULE       := init.mmap_topdown.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := init.t124.rc
+LOCAL_SRC_FILES    := init.mmap_topdown.rc
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE       := init.t124_emmc.rc
+LOCAL_MODULE       := init.tegra.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := init.t124_emmc.rc
+LOCAL_SRC_FILES    := init.tegra.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.tegra_emmc.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.tegra_emmc.rc
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
@@ -89,6 +113,14 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.ussrd.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.ussrd.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.tn8.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
@@ -97,10 +129,34 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE       := init.tn8diag.rc
+LOCAL_MODULE       := init.t124.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := init.tn8diag.rc
+LOCAL_SRC_FILES    := init.t124.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.cal.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.cal.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.tlk.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.tlk.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qvs.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.qvs.rc
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 

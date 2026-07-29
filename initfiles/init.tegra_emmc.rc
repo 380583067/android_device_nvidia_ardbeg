@@ -6,17 +6,17 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.t124.rc
+import init.tegra.rc
 
 on post-fs-data
-    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro
-	chmod 777 /dev/block/mmcblk0p13
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro context=u:object_r:factory_file:s0
 
 # create filesystems if necessary
 service setup_fs /system/bin/setup_fs \
         /dev/block/platform/sdhci-tegra.3/by-name/UDA \
         /dev/block/platform/sdhci-tegra.3/by-name/CAC \
-        /dev/block/platform/sdhci-tegra.3/by-name/FCT
+        /dev/block/platform/sdhci-tegra.3/by-name/FCT \
+        /dev/block/platform/sdhci-tegra.3/by-name/UCB
     class core
     user root
     group root

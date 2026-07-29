@@ -26,7 +26,7 @@ import org.cyanogenmod.hardware.util.FileUtils;
 public class AdaptiveBacklight {
 
     private static final String SMARTDIMMER_SYSFS =
-            "/sys/devices/platform/host1x/tegradc.0/smartdimmer/enable";
+            "/sys/class/graphics/fb0/device/smartdimmer/enable";
 
     public static boolean isSupported() {
         return true;
