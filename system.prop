@@ -1,10 +1,17 @@
 ro.opengles.version = 196609
+ro.display.resolution=1920x1080
+hwcomposer.compositor=glcomposer
 wifi.interface=wlan0
 ap.interface=wlan0
 persist.tegra.nvmmlite = 1
 persist.wlan.ti.calibrated = 0
 ro.sf.override_lcd_density = 1
 ro.sf.lcd_density = 320
+
+# NFC
+debug.nfc.fw_download=false
+debug.nfc.se=false
+
 # use glcomposer as the default compositor
 persist.tegra.compositor=glcomposer
 
@@ -42,20 +49,41 @@ ro.nv.usb.pid.rndis.adb = 7103
 ro.nv.usb.pid.ptp = 7102
 ro.nv.usb.pid.ptp.adb = 7100
 
+#mircast option in power menu
+miracast.powermenu = 1
+
+#Set audioflinger resampler quality to DYN_HIGH_QUALITY
+af.resampler.quality = 7
+
 # Audio
 ro.bt.bdaddr_path=/mnt/factory/bluetooth/bt_mac.txt
 
+# We are using old omx blobs
+media.stagefright.less-secure=true
+media.stagefright.legacyencoder=true
 persist.media.treble_omx=false
+
+# Widevine drm
+drm.service.enabled=true
 
 ro.product.model=ardbeg
 ro.product.device=ardbeg
 
-# 关闭Zygote内部预加载
+# Zygote
 ro.zygote.preload.enable=0
-# 上层全局关闭预加载
+
 ro.config.use_zygote_preload=false
-# 彻底禁用USAP预制进程池（双开关锁死）
+
 ro.zygote.usap_pool_enabled=false
 ro.zygote.usap_supported=false
 ro.boot.selinux=disable
 
+# otaupdate
+ro.radio.noril=true
+
+ro.build.characteristics=tablet
+persist.sys.language=zh
+persist.sys.country=CN
+persist.sys.timezone=Asia/Shanghai
+ro.product.locale.language=zh
+ro.product.locale.region=CN

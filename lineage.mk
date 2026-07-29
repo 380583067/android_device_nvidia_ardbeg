@@ -9,9 +9,12 @@ PRODUCT_DEVICE := ardbeg
 PRODUCT_NAME := cm_ardbeg
 PRODUCT_BRAND := nvidia
 PRODUCT_MODEL := ardbeg
-PRODUCT_MANUFACTURER := nvidia
+PRODUCT_MANUFACTURER := NVIDIA
 
 PRODUCT_GMS_CLIENTID_BASE := android-nvidia
+
+## The base dtb file name used for this product
+TARGET_KERNEL_DT_NAME := tegra124-ardbeg
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="ardbeg-eng 4.4.4 KTU84P bx test-keys"
