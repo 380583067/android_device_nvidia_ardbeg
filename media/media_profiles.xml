@@ -358,9 +358,9 @@
 
     <EncoderProfile quality="high" fileFormat="3gp" duration="30">
       <Video codec="h264"
-             bitRate="14000000"
-             width="1920"
-             height="1080"
+             bitRate="8000000"
+             width="1280"
+             height="720"
              frameRate="30"
              profile="8"
              numBFrames="0" />
@@ -421,21 +421,6 @@
              bitRate="8000000"
              width="1280"
              height="720"
-             frameRate="30"
-             profile="8"
-             numBFrames="0" />
-
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="1080p" fileFormat="3gp" duration="30">
-      <Video codec="h264"
-             bitRate="14000000"
-             width="1920"
-             height="1080"
              frameRate="30"
              profile="8"
              numBFrames="0" />
@@ -855,8 +840,8 @@
       minSampleRate="8000" maxSampleRate="8000"
       minChannels="1" maxChannels="1" />
 
-  <VideoDecoderCap name="wmv" enabled="false"/>
-  <AudioDecoderCap name="wma" enabled="false"/>
+  <VideoDecoderCap name="wmv" enabled="true"/>
+  <AudioDecoderCap name="wma" enabled="true"/>
   <VideoEditorCap maxInputFrameWidth="1920"
     maxInputFrameHeight="1080"
     maxOutputFrameWidth="1920"

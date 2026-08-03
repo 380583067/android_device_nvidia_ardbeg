@@ -19,7 +19,7 @@ LOCAL_PATH := $(call my-dir)
 # hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 include $(NVIDIA_DEFAULTS)
 
-LOCAL_C_INCLUDES += device/nvidia/common/power
+LOCAL_C_INCLUDES += device/nvidia/ardbeg/power
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_SHARED_LIBRARIES := liblog libcutils libutils libdl libnvos
 LOCAL_STATIC_LIBRARIES := libpowerhal
